@@ -1,3 +1,17 @@
+<!--
+  D0paX / GitHub profile README.
+  Renders on the profile because the repo is named exactly the username (D0paX/D0paX).
+
+  Assets:
+    ./dark.svg  ./light.svg   generated hero banner (see tools/build_hero.py)
+  Live cards below pull real data from third-party services — no numbers are
+  hardcoded, nothing is fabricated. Service hosts + Actions are documented in
+  tools/README.md.
+
+  Section order tracks the profile spec: hero, intro, social, focus, stack,
+  metrics, snake, activity, calendar, visitors, quote, footer.
+-->
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)"  srcset="./dark.svg">
@@ -6,15 +20,12 @@
   </picture>
 </p>
 
-<!-- EDIT 1: replace the LinkedIn URL below and in the Contact section -->
 <p align="center">
-  <a href="https://shrisht.space"><b>Portfolio</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#featured-projects"><b>Projects</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/shrisht"><b>LinkedIn</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="mailto:contact@shrisht.space"><b>Email</b></a>
+  <a href="https://shrisht.space">
+    <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-shrisht.space-0B1120?style=for-the-badge&labelColor=030712&color=22D3EE&logo=firefoxbrowser&logoColor=22D3EE"></a>
+  &nbsp;
+  <a href="mailto:contact@shrisht.space">
+    <img alt="Email" src="https://img.shields.io/badge/Email-contact@shrisht.space-0B1120?style=for-the-badge&labelColor=030712&color=7C3AED&logo=maildotru&logoColor=A78BFA"></a>
 </p>
 
 <br>
@@ -23,16 +34,12 @@
 
 ## About
 
-I'm Shrisht — an AI systems engineer and founder based in India, currently building
-**Aether AI OS**.
+I build AI-first software products, end to end — from the systems underneath to the
+product on top.
 
-I work on the unglamorous half of applied AI: the agent runtimes, edge APIs, evaluation
-harnesses and data paths that decide whether a demo survives contact with real traffic.
-The work spans AI operating systems, native browser engineering, agent platforms,
-enterprise software and cloud infrastructure — different surfaces, one discipline: get
-the foundations right, and everything above them stays cheap to change.
-
-Bachelor of Computer Applications. Self-taught in everything that mattered.
+Founder and engineer. I care about durable architecture, local-first design, and
+software that stays cheap to change years after it ships. Currently focused on personal
+AI operating systems and the automation layer around them.
 
 <br>
 
@@ -40,36 +47,14 @@ Bachelor of Computer Applications. Self-taught in everything that mattered.
 
 ## Currently Building
 
-**Aether AI OS** — an AI-first personal operating system: agent runtime, long-term
-memory, tool orchestration and voice, running local-first.
+Private products, under active development. No implementation details here.
 
-**AI Agent Platform** — the runtime beneath it. Durable execution, structured tool
-contracts, and observability for agents that run longer than a single request.
+- **Aether AI OS** — an AI-first personal operating system.
+- **Zingr** — a CRM / ERP platform.
+- **Valtrack** — a tracking product.
 
-**Enterprise Applications** — production systems for teams who need AI features that
-hold up under audit, latency budgets and real users.
-
-<br>
-
----
-
-## Engineering Philosophy
-
-**Systems, not scripts.**
-Anything that runs twice earns a contract, a test and a rollback path.
-
-**Ship to production.**
-A prototype that never leaves localhost hasn't taught you anything about the problem yet.
-
-**Latency is a feature.**
-Compute belongs close to the user. The edge isn't an optimisation, it's the default.
-
-**Types are the specification.**
-Pydantic and TypeScript at every boundary. Validate at the edge of a system, never in
-the middle of it.
-
-**If you can't see it, you don't own it.**
-Tracing, evals and structured logs ship with v1 — not after the first incident.
+Alongside them: **AI automation** pipelines and the **AI systems** work that ties the
+products together.
 
 <br>
 
@@ -77,166 +62,91 @@ Tracing, evals and structured logs ship with v1 — not after the first incident
 
 ## Tech Stack
 
-The working set. Chosen for production characteristics, not novelty.
+The working set, grouped by where it runs. Chosen for production characteristics, not
+novelty.
 
-<details>
-<summary><b>Languages &amp; Backend</b> — Python, TypeScript, FastAPI, Pydantic</summary>
-
-<br>
-
-- **Languages** — `Python` `TypeScript`
-- **APIs** — `FastAPI` `Pydantic`
-
-Pydantic models are the contract between services, agents and the database — one schema,
-validated at the boundary, reused for OpenAPI and tool definitions.
-
-</details>
-
-<details>
-<summary><b>Frontend</b> — React, Next.js, Tailwind CSS</summary>
-
-<br>
-
-- **UI** — `React` `Next.js` `Tailwind CSS`
-
-Server components by default, client state only where interaction demands it.
-
-</details>
-
-<details>
-<summary><b>Data &amp; Infrastructure</b> — PostgreSQL, Turso, Cloudflare Workers, Docker, Git</summary>
-
-<br>
-
-- **Data** — `PostgreSQL` `Turso`
-- **Runtime** — `Cloudflare Workers` `Docker`
-- **Tooling** — `Git`
-
-PostgreSQL for relational truth, Turso for edge-replicated reads where round trips to a
-single region would show up in the p99.
-
-</details>
-
-<details>
-<summary><b>AI &amp; Quality</b> — Claude, OpenAI, Gemini, Playwright</summary>
-
-<br>
-
-- **Models** — `Claude` `OpenAI` `Gemini`
-- **Testing** — `Playwright`
-
-Model-agnostic by design: prompts, tools and evals live behind an interface so swapping a
-provider is a config change, not a rewrite.
-
-</details>
+| Layer | Tools |
+| :-- | :-- |
+| **Frontend** | `TypeScript` · `JavaScript` · `React` · `Next.js` |
+| **Backend** | `Python` · `FastAPI` · `Node.js` |
+| **Cloud** | `Cloudflare Workers` · `Cloudflare Images` |
+| **Data** | `PostgreSQL` · `SQLite` |
+| **Infrastructure** | `Docker` · `Linux` |
+| **AI** | `AI Systems` · `Prompt Engineering` |
+| **DevOps &amp; Automation** | `Git` · `GitHub` · `Automation` · `SEO` |
 
 <br>
 
 ---
 
-## Featured Projects
-
-### Aether AI OS
-
-**An AI-first personal operating system.**
-
-<sub>Private development</sub>
-
-An agent runtime with long-term memory, tool orchestration and a voice interface, built
-as one continuous system rather than a set of scripts. Local-first by architecture:
-memory, embeddings and the base inference tier run on hardware I control, with cloud
-models used deliberately rather than by default.
-
-`Python` `FastAPI` `Pydantic` `PostgreSQL` `Qdrant` `Redis`
-
-<br>
-
-### Lumina
-
-**A privacy-focused AI browser.**
-
-<sub>In development · repository will be renamed to Lumina</sub>
-
-A Chromium-based browser with AI built into the browsing experience rather than bolted
-on as an extension. Brave/Chromium foundation, React WebUI, Rust services, telemetry
-stripped out at the source.
-
-`C++` `Chromium` `Rust` `React` `TypeScript`
-
-[Repository](https://github.com/D0paX/aether-1.0)
-
-<br>
-
-### Portfolio
-
-**Engineering portfolio and digital studio.**
-
-Where the work lives: projects, writing, and the studio side of what I build.
-Edge-rendered, typed end to end, and deliberately fast — no framework ceremony, no
-layout shift, no cookie banner.
-
-`Next.js` `TypeScript` `Tailwind CSS` `Cloudflare Workers`
-
-[Live](https://shrisht.space)
-
-<br>
-
-### Enterprise Applications
-
-**Production AI systems for teams that carry real risk.**
-
-<!-- EDIT 4: name specific engagements or sectors if you're able to -->
-Retrieval pipelines, agent workflows and internal tooling built to survive audit,
-latency budgets and users who did not read the docs. Scoped, shipped and handed over.
-
-`Python` `FastAPI` `PostgreSQL` `Docker` `Playwright`
-
-<br>
-
----
-
-## GitHub Analytics
+## Metrics
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=D0paX&show_icons=true&include_all_commits=true&rank_icon=github&border_radius=12&bg_color=0F172A&title_color=22D3EE&icon_color=7C3AED&text_color=94A3B8&border_color=1E293B">
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=D0paX&show_icons=true&include_all_commits=true&rank_icon=github&border_radius=12&bg_color=F8FAFC&title_color=2563EB&icon_color=06B6D4&text_color=475569&border_color=E2E8F0">
-    <img alt="GitHub statistics for D0paX" src="https://github-readme-stats.vercel.app/api?username=D0paX&show_icons=true&include_all_commits=true&rank_icon=github&border_radius=12&bg_color=0F172A&title_color=22D3EE&icon_color=7C3AED&text_color=94A3B8&border_color=1E293B" width="430">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=D0paX&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&hide_border=true&border_radius=12&bg_color=0D1117&title_color=22D3EE&icon_color=7C3AED&text_color=94A3B8">
+    <img alt="D0paX GitHub stats" src="https://github-readme-stats.vercel.app/api?username=D0paX&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&hide_border=true&border_radius=12&bg_color=FFFFFF&title_color=2563EB&icon_color=06B6D4&text_color=475569" height="165">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=D0paX&layout=compact&langs_count=8&border_radius=12&bg_color=0F172A&title_color=22D3EE&text_color=94A3B8&border_color=1E293B">
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=D0paX&layout=compact&langs_count=8&border_radius=12&bg_color=F8FAFC&title_color=2563EB&text_color=475569&border_color=E2E8F0">
-    <img alt="Most used languages by D0paX" src="https://github-readme-stats.vercel.app/api/top-langs/?username=D0paX&layout=compact&langs_count=8&border_radius=12&bg_color=0F172A&title_color=22D3EE&text_color=94A3B8&border_color=1E293B" width="430">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=D0paX&layout=compact&langs_count=8&hide_border=true&border_radius=12&bg_color=0D1117&title_color=22D3EE&text_color=94A3B8">
+    <img alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=D0paX&layout=compact&langs_count=8&hide_border=true&border_radius=12&bg_color=FFFFFF&title_color=2563EB&text_color=475569" height="165">
   </picture>
 </p>
 
 <!--
-  These cards come from github-readme-stats, a third-party service on Vercel.
-  Colours are pinned to the banner palette. Two things worth knowing:
-    · The service rate-limits and occasionally 502s — a broken card is its fault,
-      not your markdown. Self-host it if that ever becomes annoying.
-    · Private-repo commits only appear if you deploy your own instance with a token.
-  Widths are fixed at 430px so the pair sits side by side on desktop and wraps to
-  one column on a phone, instead of shrinking to unreadable thumbnails.
+  Richer metrics card, generated by .github/workflows/metrics.yml (lowlighter/metrics).
+  Appears after the first successful Action run; needs the METRICS_TOKEN secret.
 -->
+<p align="center">
+  <img alt="Detailed metrics" src="./assets/metrics.svg" width="100%">
+</p>
 
 <br>
 
 ---
 
-## Contact
+## Contribution Snake
 
-Open to conversations about AI infrastructure, agent systems and founding engineering
-work. The fastest route is email.
-
-<!-- EDIT 1: LinkedIn URL -->
-- **Email** — [contact@shrisht.space](mailto:contact@shrisht.space)
-- **Portfolio** — [shrisht.space](https://shrisht.space)
-- **LinkedIn** — [linkedin.com/in/shrisht](https://www.linkedin.com/in/shrisht)
-- **Location** — India, working across timezones
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/D0paX/D0paX/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/D0paX/D0paX/output/github-snake.svg">
+    <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/D0paX/D0paX/output/github-snake-dark.svg">
+  </picture>
+</p>
 
 <br>
 
+---
+
+## Activity
+
 <p align="center">
-  <sub>Built with SVG and SMIL. No JavaScript, no external assets, no tracking.</sub>
+  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=D0paX&bg_color=0D1117&color=22D3EE&line=7C3AED&point=10B981&area=true&area_color=7C3AED&hide_border=true&custom_title=Contribution%20Graph" width="100%">
 </p>
+
+<br>
+
+---
+
+## Contribution Calendar
+
+<p align="center">
+  <img alt="Contribution streak and calendar" src="https://streak-stats.demolab.com/?user=D0paX&hide_border=true&background=0D1117&ring=22D3EE&fire=7C3AED&currStreakLabel=22D3EE&sideLabels=94A3B8&dates=64748B&sideNums=F8FAFC&currStreakNum=F8FAFC&stroke=1E293B">
+</p>
+
+<br>
+
+---
+
+<p align="center">
+  <img alt="Profile views" src="https://komarev.com/ghpvc/?username=D0paX&label=Profile%20views&color=1e293b&style=flat">
+</p>
+
+<p align="center">
+  <sub><em>Build systems that outlive their creators.</em></sub>
+</p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://capsule-render.vercel.app/api?type=waving&color=0:030712,50:7C3AED,100:22D3EE&height=110&section=footer&reversal=true">
+  <img alt="" src="https://capsule-render.vercel.app/api?type=waving&color=0:E2E8F0,50:2563EB,100:06B6D4&height=110&section=footer&reversal=true" width="100%">
+</picture>

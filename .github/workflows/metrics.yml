@@ -1,0 +1,40 @@
+name: Generate Metrics
+
+# Renders a detailed metrics SVG (lowlighter/metrics) and commits it to
+# assets/metrics.svg, which the README embeds. All figures are pulled live from
+# the GitHub API at render time — nothing is hardcoded.
+#
+# REQUIRES a repository secret named METRICS_TOKEN:
+#   a classic Personal Access Token with scopes: repo, read:user, read:org.
+#   Create at https://github.com/settings/tokens  then add under
+#   Settings -> Secrets and variables -> Actions -> New repository secret.
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # daily
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Render metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: assets/metrics.svg
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Kolkata
+          config_order: base.header, base.activity, base.community, base.repositories
+
+          # Themed to match the hero banner palette.
+          config_colors: "background=0D1117"
+          # include private-repo contribution counts (needs token scope)
+          repositories_affiliations: owner, collaborator, organization_member
