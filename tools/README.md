@@ -1,4 +1,34 @@
-# Hero banner — maintenance
+# Profile maintenance
+
+## Self-hosted GitHub Readme Stats (required for two cards)
+
+The **GitHub Stats** and **Top Languages** cards in the README point at a
+self-hosted github-readme-stats instance, not the public `github-readme-stats.vercel.app`
+(that shared instance is permanently over-quota and returns HTTP 503).
+
+A fork already exists: **https://github.com/D0paX/github-readme-stats**
+
+Deploy it once (the profile's two stats cards stay broken until you do):
+
+1. https://vercel.com/new  →  **Import**  →  select `D0paX/github-readme-stats`.
+2. **Name the project exactly `d0pax-readme-stats`** — the README URLs are wired to
+   `https://d0pax-readme-stats.vercel.app`. (Different name → update the two
+   `d0pax-readme-stats.vercel.app` URLs in `README.md` to match.)
+3. Framework preset: **Other**. Deploy.
+4. Optional but recommended — higher GitHub rate limits: Project → Settings →
+   Environment Variables → add `PAT_1` = a GitHub classic PAT (scope: `repo` or just
+   public access). Redeploy.
+
+Endpoints after deploy:
+- `https://d0pax-readme-stats.vercel.app/api?username=D0paX&...`  (stats)
+- `https://d0pax-readme-stats.vercel.app/api/top-langs/?username=D0paX&...`  (languages)
+
+Redeploy = push to the fork (Vercel auto-builds) or hit **Redeploy** in the dashboard.
+Update the upstream: `gh repo sync D0paX/github-readme-stats` or the fork's Sync button.
+
+---
+
+# Hero banner
 
 `dark.svg` and `light.svg` in the repo root are **generated**. This directory holds the
 generator and the cached portrait; edit those, not the SVGs.
